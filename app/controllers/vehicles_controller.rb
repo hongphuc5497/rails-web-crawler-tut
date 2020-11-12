@@ -65,7 +65,7 @@ class VehiclesController < ApplicationController
     url      = 'https://www.cars.com/shopping/sedan/'.freeze
     response = VehiclesSpider.process(url)
 
-    if respond_to[:status] == :completed && response[:error].nil?
+    if response[:status] == :completed && response[:error].nil?
       flash[:notice] = "Successfully scraped url"
     else
       flash[:alert] = response[:error]
