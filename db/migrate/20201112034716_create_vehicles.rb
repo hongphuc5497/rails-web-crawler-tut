@@ -6,7 +6,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.string :exterior_color
       t.string :interior_color
       t.string :transmission
-      t.string :drivertrain
+      t.string :drivetrain
       t.integer :price
       t.integer :miles
 

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_034716) do
     t.string "exterior_color"
     t.string "interior_color"
     t.string "transmission"
-    t.string "drivertrain"
+    t.string "drivetrain"
     t.integer "price"
     t.integer "miles"
     t.datetime "created_at", null: false
