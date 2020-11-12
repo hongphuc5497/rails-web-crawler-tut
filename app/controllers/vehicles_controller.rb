@@ -61,6 +61,20 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def scrape
+    url      = 'https://www.cars.com/shopping/sedan/'.freeze
+    response = VehiclesSpider.process(url)
+
+    if respond_to[:status] == :completed && response[:error].nil?
+      flash[:notice] = "Successfully scraped url"
+    else
+      flash[:alert] = response[:error]
+    end
+
+  rescue StandardError => e
+    flash[:alert] = "Error: #{e}"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
